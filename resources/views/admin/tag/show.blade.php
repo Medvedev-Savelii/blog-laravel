@@ -7,12 +7,21 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
-                        <h1 class="m-0 mr-2">{{$category->title}}</h1>
-                        <a href="{{route('admin.category.edit', $category->id)}}"><i class="fas fa-pencil-alt"></i></a>
+                        <h1 class="m-0 mr-2">{{$tag->title}}</h1>
+                        <a href="{{route('admin.tag.edit', $tag->id)}}"><i class="fas fa-pencil-alt"></i></a>
+                        <form action="{{route('admin.tag.delete', $tag->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="border-0 bg-transparent">
+                                <i class="fas fa-trash text-danger" role="button"></i>
+                            </button>
+                        </form>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <a href="{{route("admin.category.store")}}" class="btn btn-block btn-primary btn-lg">Назад</a>
+                            <a href="{{route("admin.tag.store")}}"
+                               class="btn btn-block btn-primary btn-lg">Назад</a>
+
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -32,14 +41,14 @@
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <tbody>
-                                        <tr>
-                                            <td>ID</td>
-                                            <td>{{$category->id}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Название</td>
-                                            <td>{{$category->title}}</td>
-                                        </tr>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>{{$tag->id}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Название</td>
+                                        <td>{{$tag->title}}</td>
+                                    </tr>
                                     </tbody>
                                 </table>
 

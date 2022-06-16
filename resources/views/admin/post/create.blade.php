@@ -85,9 +85,10 @@
                             </div>
                             <div class="form-group w-50">
                                 <label>Теги</label>
-                                <select class="select2" multiple="multiple" data-placeholder="Выберите теги" style="width: 100%;">
+                                <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выберите теги" style="width: 100%;">
                                     @foreach($tags as $tag)
-                                    <option value="{{$tag->id}}">{{$tag->title}}</option>
+                                    <option value="{{$tag->id}}" {{is_array( old('tag_ids')) && in_array(old($tag->id, 'tag_ids')) ? "selected" : ""}}
+                                    >{{$tag->title}}</option>
                                     @endforeach
                                 </select>
                             </div>

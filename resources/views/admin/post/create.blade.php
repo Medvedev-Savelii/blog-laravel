@@ -50,6 +50,9 @@
                                     <div class="input-group-append">
                                         <span class="input-group-text">Загрузка</span>
                                     </div>
+                                    @error('preview_image')
+                                    <div class="text-danger">Выберите изображение </div>
+                                    @enderror
                                 </div>
                             </div>
                      {{-------------------------Preview----------------------------}}
@@ -63,7 +66,30 @@
                                     <div class="input-group-append">
                                         <span class="input-group-text">Загрузка</span>
                                     </div>
+                                    @error('main_image')
+                                    <div class="text-danger">Выберите изображение </div>
+                                    @enderror
                                 </div>
+                            </div>
+                            <div class="form-group w-50">
+                                <label>Выберите категорию</label>
+                                <select name="category_id" class="form-control">
+                                    @foreach($categories as $category)
+                                    <option value="{{$category->id}}" {{$category->id == old('category_id') ? "selected" : ""}}
+                                    >{{$category->title}}</option>
+                                    @endforeach()
+                                        @error('category_id')
+                                        <div class="text-danger">Выберите категорию </div>
+                                        @enderror
+                                </select>
+                            </div>
+                            <div class="form-group w-50">
+                                <label>Теги</label>
+                                <select class="select2" multiple="multiple" data-placeholder="Выберите теги" style="width: 100%;">
+                                    @foreach($tags as $tag)
+                                    <option value="{{$tag->id}}">{{$tag->title}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-block btn-primary col-4" value="Добавить">

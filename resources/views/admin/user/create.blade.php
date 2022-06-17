@@ -30,7 +30,19 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="Введите название пользователя">
                                 @error('name')
-                                        <div class="text-danger">Заполни поле </div>
+                                        <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="email" placeholder="Email">
+                                @error('email')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="password" placeholder="Password">
+                                @error('password')
+                                <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
                                 <input type="submit" class="btn btn-block btn-primary col-4" value="Добавить">

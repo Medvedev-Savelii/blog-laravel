@@ -33,7 +33,15 @@
                                 value="{{$user->name}}"
                                 >
                                 @error('name')
-                                        <div class="text-danger">Заполни поле </div>
+                                        <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="email" placeholder="Email"
+                                       value="{{$user->email}}"
+                                >
+                                @error('email')
+                                <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
                                 <input type="submit" class="btn btn-block btn-primary col-4" value="Обновить">

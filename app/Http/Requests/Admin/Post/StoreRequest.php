@@ -35,4 +35,23 @@ class StoreRequest extends FormRequest
 
         ];
     }
+    public function messages()
+    {
+        return [
+            'title.required' => "",
+            'title.string' => "",
+            'content.required' => "",
+            'content.string' => "",
+            'preview_image.required' => "",
+            'preview_image.file' => "",
+            'main_image.required' => "",
+            'main_image.file' => "",
+            'category_id.required' => "",
+            'category_id.integer' => "",
+            'category_id.exists' => "",
+            'tag_ids.array' => "",
+
+
+        ];
+    }
 }

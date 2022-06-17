@@ -38,20 +38,18 @@ class StoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => "",
-            'title.string' => "",
-            'content.required' => "",
-            'content.string' => "",
-            'preview_image.required' => "",
-            'preview_image.file' => "",
-            'main_image.required' => "",
-            'main_image.file' => "",
-            'category_id.required' => "",
-            'category_id.integer' => "",
-            'category_id.exists' => "",
-            'tag_ids.array' => "",
-
-
+            'title.required' => "Это поле необходимо для заполнения",
+            'title.string' => "Данные должны соответствовать строчному типу",
+            'content.required' => "Это поле необходимо для заполнения",
+            'content.string' => "Данные должны соответствовать строчному типу",
+            'preview_image.required' => "Это поле необходимо для заполнения",
+            'preview_image.file' => "Необходимо выбрать файл",
+            'main_image.required' => "Это поле необходимо для заполнения",
+            'main_image.file' => "Необходимо выбрать файл",
+            'category_id.required' => "Это поле необходимо для заполнения",
+            'category_id.integer' => "Id категории должен быть числом",
+            'category_id.exists' => "Id категории должен быть в базе данных",
+            'tag_ids.array' => "Необходимо отправить массив данных",
         ];
     }
 }

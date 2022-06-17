@@ -30,13 +30,13 @@
                             <div class="form-group w-25" >
                                 <input type="text" class="form-control" name="title" placeholder="Введите название категории" value="{{old('title')}}">
                                 @error('title')
-                                        <div class="text-danger">Заполни поле </div>
+                                        <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <textarea name="content" id="summernote" value="{{old('content')}}"></textarea>
                                 @error('content')
-                                <div class="text-danger">Заполни поле </div>
+                                <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
                      {{-------------------------Preview----------------------------}}
@@ -51,7 +51,7 @@
                                         <span class="input-group-text">Загрузка</span>
                                     </div>
                                     @error('preview_image')
-                                    <div class="text-danger">Выберите изображение </div>
+                                    <div class="text-danger">{{$message}}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                         <span class="input-group-text">Загрузка</span>
                                     </div>
                                     @error('main_image')
-                                    <div class="text-danger">Выберите изображение </div>
+                                    <div class="text-danger">{{$message}}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                     >{{$category->title}}</option>
                                     @endforeach()
                                         @error('category_id')
-                                        <div class="text-danger">Выберите категорию </div>
+                                        <div class="text-danger">{{$message}}</div>
                                         @enderror
                                 </select>
                             </div>
@@ -90,6 +90,9 @@
                                     <option value="{{$tag->id}}" {{is_array( old('tag_ids')) && in_array(old($tag->id, 'tag_ids')) ? "selected" : ""}}
                                     >{{$tag->title}}</option>
                                     @endforeach
+                                        @error('tag_ids')
+                                        <div class="text-danger">{{$message}}</div>
+                                        @enderror
                                 </select>
                             </div>
                             <div class="form-group">

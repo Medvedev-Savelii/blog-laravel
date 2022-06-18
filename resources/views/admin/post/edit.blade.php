@@ -11,7 +11,8 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <a href="{{route("admin.post.store")}}" class="btn btn-block btn-primary btn-lg">Назад</a>
+                            <li class="breadcrumb-item"><a href="{{route('admin.post.index')}}">Главная</a></li>
+                            <li class="breadcrumb-item active">Посты</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

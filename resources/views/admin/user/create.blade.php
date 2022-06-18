@@ -10,9 +10,11 @@
                         <h1 class="m-0">Добавление пользователя</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <a href="{{route("admin.user.store")}}" class="btn btn-block btn-primary btn-lg">Назад</a>
+                        <ol class="breadcrumb float-sm-right d-flex ">
+                            <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Главная</a></li>
+                            <li class="breadcrumb-item active">Пользователи</li>
                         </ol>
+
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->

@@ -45,7 +45,7 @@
                                             <td class="text-center"><a href="{{route('personal.comment.edit', $comment->id)}}"
                                                    class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                             <td class="text-center">
-                                                <form action="{{route('personal.liked.delete', $comment->id)}}" method="POST">
+                                                <form action="{{route('personal.comment.delete', $comment->id)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="border-0 bg-transparent">

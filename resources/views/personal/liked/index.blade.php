@@ -46,7 +46,7 @@
                                                         class="far fa-eye"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <form action="{{route('admin.post.delete', $post->id)}}" method="POST">
+                                                <form action="{{route('personal.liked.delete', $post->id)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="border-0 bg-transparent">
@@ -62,7 +62,6 @@
                             <!-- /.card-body -->
                         </div>
                     </div>
-
                 </div>
                 <!-- /.row -->
             </div><!-- /.container-fluid -->

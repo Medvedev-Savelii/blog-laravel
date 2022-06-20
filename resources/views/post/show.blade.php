@@ -17,6 +17,20 @@
                     </div>
                 </div>
             </section>
+
+            <section>
+                    <form action="{{route('post.like.store', $post->id)}}" method="POST">
+                        @csrf
+                        <span>{{$post->liked_users_count}}</span>
+                        <button type="submit" class="border-0 bg-transparent">
+                            @auth()
+                                <i class="fa{{auth()->user()->likedPosts->contains($post->id) ? 's' : 'r'}} fa-heart"></i>
+                            @endauth
+                        </button>
+                    </form>
+            </section>
+
+
             <div class="row">
                 <div class="col-lg-9 mx-auto">
                     <section class="related-posts">

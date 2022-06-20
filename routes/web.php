@@ -20,7 +20,7 @@ Route::group(['namespace' => 'Main'], function () {
 
 Route::group(['namespace' => 'Post', 'prefix' => 'posts' ], function () {
     Route::get('/', 'IndexController')->name('post.index');
-    Route::get('/{show}', 'ShowController')->name('post.show');
+    Route::get('/{post}', 'ShowController')->name('post.show');
 });
 
 Route::group(['namespace' => 'Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function() {
